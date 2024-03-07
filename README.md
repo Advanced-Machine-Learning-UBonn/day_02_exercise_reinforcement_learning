@@ -40,12 +40,12 @@ Recall the cost function for neural Q-Learning:
 
 $$
     \begin{align}
-        L(\theta) = \frac{1}{N_a} \sum_{i=1}^{N_a} (y_i - Q_n(s,a; \theta)_i)^2
+        L(\theta) = \frac{1}{N_a \sum_{i=1}^{N_a} (y_i - Q_n(s,a; \theta)_i)^2
     \end{align}
 $$
 
 with $Q_n(s,a; \theta) \approx Q(s,a)$ the neural Q-Table approximator. And $\mathbf{y}$ the desired output 
-at the current optimization step. Construct $\mathbf{y} \in \mathbb{R}^{3,3}$ by inserting 
+at the current optimization step. Construct $\mathbf{y} \in \mathbb{R}^{3 \cdot 3}$ by inserting 
 
 $$
 \begin{align}
