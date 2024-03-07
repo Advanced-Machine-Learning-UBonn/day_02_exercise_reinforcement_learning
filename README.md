@@ -32,7 +32,7 @@ progress. When `tests/test_board.py` checks out without an error, this task is d
 2.4 Recycle your code from the frozen lake example to implement Q-Table (or dict) learning. Implement learning by playing games against a random opponent. The opponent performs random moves all the time. Use your `create explore move` function for the opponent. 
 
 2.5 Stop sampling from the Q-table every time for your agent. Sample the agent with probability $\epsilon$ and
-perform an exploratory move with probability $1 - \epsilon$. 
+perform an exploratory move with probability $1 - \epsilon$. Rember to use `jax.random.split` to generate new seeds for `jax.random.uniform`. 
 
 ### Q-Neural RL:
 3.1 Let's replace the Table with a neural network [2, Algorithm 1]. For simplicity, we do not implement batching, this works here, but won't scale to harder problems. Re-use as much code from task two as possible. Open  `src/train_neural_Q_tictactoe.py`. Your `board_update`, `create_explore_move` functions are already imported.
