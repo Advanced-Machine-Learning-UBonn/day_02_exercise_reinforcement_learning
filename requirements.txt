@@ -1,0 +1,7 @@
+nox
+numpy
+matplotlib
+jax
+jaxlib
+flax
+tqdm
