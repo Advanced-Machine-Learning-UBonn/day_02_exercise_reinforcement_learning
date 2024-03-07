@@ -40,7 +40,7 @@ Recall the cost function for neural Q-Learning:
 
 $$
     \begin{align}
-        L(\theta) = \frac{1}{N_a \sum_{i=1}^{N_a} (y_i - Q_n(s,a; \theta)_i)^2
+        L(\theta) = \frac{1}{N_a} \sum_{i=1}^{N_a} (y_i - Q_n(s,a; \theta)_i)^2
     \end{align}
 $$
 
