@@ -4,6 +4,7 @@ This exercise explores neural and table-based Reinforcement Learning.
 - Table based RL:
     - `src/train_table_Q_frozen_lake.py`
     - `src/train_table_Q_tictactoe.py`
+        - Finish the `TicTacToeBoard` class in `gen.py`.
 - Neural RL:
     - `src/train_neural_Q_tictactoe.py`
 

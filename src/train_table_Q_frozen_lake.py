@@ -32,10 +32,12 @@ for _ in range(episodes):
     outcome = "failed"
 
     while not game_over:
-        if np.max(q_table[state]) > 0:
-            action = np.argmax(q_table[state])
-        else:
-            action = environment.action_space.sample()
+
+        # if a q_table entry exists for state choose the
+        # most likely action.
+        # if no entry exists choose a random action from
+        # 'environment.action_space.sample()'.
+        action = 0 # TODO: remove me.
 
         new_state, reward, game_over, info, _ = environment.step(action)
 

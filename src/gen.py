@@ -36,40 +36,23 @@ class TicTacToeBoard(object):
             ValueError: If the player names are not 1 or 2,
                 or if a position on he board is already occupied.
         """
-        if player not in (1, 2):
-            raise ValueError("Players should be 1 or 2.")
-
-        if self.board[pos] == 0:
-            self.board[pos] = 1 if player == 1 else -1
-        else:
-            raise ValueError(f"Player {player} chose an occupied board position.")
+        # TODO: implement me.
 
         self._check_win()
 
     def _check_win(self):
         """Evaluate the win and draw conditions.
 
+        Players with 3 board positions in a row win.
+        Check the row, column and diagonal win conditions.
+
+        If no player won and the board is full its a draw.
+
         Raises:
             PlayerWins: If a player won.
             Draw: If the board is full.
         """
-        for player in (1, 2):
-            check = 1 if player == 1 else -1
-            col_sum = np.sum(self.board == check, axis=0)
-            row_sum = np.sum(self.board == check, axis=1)
-            diag_sum = np.sum(np.diag(self.board) == check)
-            ud_diag_sum = np.sum(np.diag(np.fliplr(self.board)) == check)
-
-            if (
-                any(col_sum == 3)
-                or any(row_sum == 3)
-                or diag_sum == 3
-                or ud_diag_sum == 3
-            ):
-                raise PlayerWins(f"Player {player} wins.")
-
-            if all((self.board != 0).flatten()):
-                raise Draw("It's a draw.")
+        # TODO: implement me.
 
     def __repr__(self):
         """Implement how this object behaves within print statements."""
