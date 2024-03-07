@@ -36,13 +36,16 @@ perform an exploratory move with probability $1 - \epsilon$.
 ### Q-Neural RL:
 3.1 Let's replace the Table with a neural network [2, Algorithm 1]. For simplicity, we do not implement batching, this works here, but won't scale to harder problems. Re-use as much code from task two as possible. Open  `src/train_neural_Q_tictactoe.py`. Your `board_update`, `create_explore_move` functions are already imported.
 Recall the cost function for neural Q-Learning:
+
 $$
     \begin{align}
         L(\theta) = 1/N_a \sum_{i=1}^{N_a} (y_i - Q_n(s,a; \theta)_i)^2
     \end{align}
 $$
+
 with $Q_n(s,a; \theta) \approx Q(s,a)$ the neural Q-Table approximator. And $\mathbf{y}$ the desired output 
 at the current optimization step. Construct $\mathbf{y} \in \mathbb{R}^{3,3}$ by inserting 
+
 $$
 \mathcal{y} =
 \begin{cases}
@@ -50,6 +53,7 @@ $$
     r + \gamma \max_a Q(s_{t+1, a; \theta}) & \text{ else}
 \end{cases}
 $$
+
 into $\mathbf{y}$ the the position of the move taken. Compute gradients using `jax.grad` update your weights
 using `jax.tree_map(lambda w, g: w - alpha*g, weights, grads)`.
 
