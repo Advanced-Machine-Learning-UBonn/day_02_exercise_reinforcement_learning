@@ -10,7 +10,7 @@ This exercise explores Q-learning based on neural and table-based approaches.
 
 $$
     \begin{align}
-    Q(s_t, a_t)_{\text{update}} = Q(s_t, a_t) + \alpha (r_t  + \gamma \max_a (Q(s_{t+1}, a)) - Q(s_t, a_t) ) 
+    Q(s_t, a_t)_{\text{update}} = Q(s_t, a_t) + \alpha (r_t  + \gamma \max_a (Q(s_{t + 1}, a)) - Q(s_t, a_t) ) 
     \end{align}
 $$
 
