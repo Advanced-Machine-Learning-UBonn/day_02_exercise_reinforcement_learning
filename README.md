@@ -1,5 +1,6 @@
 # Exercise Reinforcement Learning
-This exercise explores Q-learning based on neural and table-based approaches.
+This exercise explores Q-learning based on neural and table-based approaches. Use Vscodes preview for 
+a proper rendering of the math.
 
 ### Q-Table based RL:
 #### Frozen-Lake:
