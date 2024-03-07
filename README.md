@@ -48,11 +48,13 @@ with $Q_n(s,a; \theta) \approx Q(s,a)$ the neural Q-Table approximator. And $\ma
 at the current optimization step. Construct $\mathbf{y} \in \mathbb{R}^{3,3}$ by inserting 
 
 $$
+\begin{align}
 \mathcal{y} =
 \begin{cases}
     r,  & \text{  if the game ended} \\
     r + \gamma \max_a Q(s_{t+1, a; \theta}) & \text{ else}
 \end{cases}
+\end{align}
 $$
 
 into $\mathbf{y}$ the the position of the move taken. Compute gradients using `jax.grad` and update your weights using `jax.tree_map(lambda w, g: w - alpha*g, weights, grads)`.
