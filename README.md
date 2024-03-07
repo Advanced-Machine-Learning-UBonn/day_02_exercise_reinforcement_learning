@@ -60,7 +60,7 @@ into $\mathbf{y}$ the the position of the move taken. Compute gradients using `j
 #### Play against your agent
 `play.py` allows playing against the trained TicTacToe agents.
 
-### Further Reading:
+### Optional further reading:
 - [1] Sutton, Reinforcement Learning, https://www.andrew.cmu.edu/course/10-703/textbook/BartoSutton.pdf
 - [2] Playing Atari with Deep Reinforcement Learning, https://arxiv.org/pdf/1312.5602.pdf
 - [3] Pong from Pixels, https://karpathy.github.io/2016/05/31/rl/
