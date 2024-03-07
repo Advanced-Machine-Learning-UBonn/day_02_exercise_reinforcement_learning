@@ -36,7 +36,10 @@ class TicTacToeBoard(object):
             ValueError: If the player names are not 1 or 2,
                 or if a position on he board is already occupied.
         """
-        # TODO: implement me.
+        # TODO: Record the move `pos` and the `player` who made the move
+        # on the `self.board`.
+        # Can you think of a convenient way to encode the players?
+        # How are you going to represent empty fields?
 
         self._check_win()
 

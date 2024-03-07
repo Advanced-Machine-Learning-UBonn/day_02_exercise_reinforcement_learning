@@ -11,8 +11,9 @@ import gymnasium as gym
 import numpy as np
 
 # Initialize the non-slippery Frozen Lake environment
-environment = gym.make("FrozenLake-v1", is_slippery=False, render_mode="ansi",
-                       max_episode_steps=100)  # ansi
+environment = gym.make(
+    "FrozenLake-v1", is_slippery=False, render_mode="ansi", max_episode_steps=100
+)  # ansi
 environment.reset()
 # environment.render()
 
@@ -38,7 +39,7 @@ for _ in range(episodes):
         # most likely action.
         # if no entry exists choose a random action from
         # 'environment.action_space.sample()'.
-        action = 0 # TODO: remove me.
+        action = 0  # TODO: remove me.
 
         # ask for environment feedback.
         new_state, reward, game_over, info, _ = environment.step(action)

@@ -11,7 +11,8 @@ sys.path.insert(0, "./src/")
 
 
 from src.gen import TicTacToeBoard
-from src.train_neural_Q_tictactoe import create_explore_move, get_move
+from src.train_neural_Q_tictactoe import get_move
+from src.train_table_Q_tictactoe import create_explore_move
 
 
 @pytest.mark.parametrize("move", list((x, y) for x in range(3) for y in range(3)))
