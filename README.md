@@ -5,7 +5,7 @@ a proper rendering of the math.
 ### Q-Table based RL:
 #### Frozen-Lake:
 
-1.1 Take a look at the [frozen-lake-documentation](https://gymnasium.farama.org/environments/toy_text/frozen_lake/), familiarize yourself with the setup.
+1.1 Take a look at the [frozen-lake-documentation](https://gymnasium.farama.org/environments/toy_text/frozen_lake/), and familiarize yourself with the setup.
 - Recall the Q-Table update Rule we saw during the lecture or take a look at [1, page 153]:
 
 
@@ -55,8 +55,7 @@ $$
 \end{cases}
 $$
 
-into $\mathbf{y}$ the the position of the move taken. Compute gradients using `jax.grad` update your weights
-using `jax.tree_map(lambda w, g: w - alpha*g, weights, grads)`.
+into $\mathbf{y}$ the the position of the move taken. Compute gradients using `jax.grad` and update your weights using `jax.tree_map(lambda w, g: w - alpha*g, weights, grads)`.
 
 #### Play against your agent
 `play.py` allows playing against the trained TicTacToe agents.
