@@ -11,7 +11,8 @@ import gymnasium as gym
 import numpy as np
 
 # Initialize the non-slippery Frozen Lake environment
-environment = gym.make("FrozenLake-v1", is_slippery=False, render_mode="ansi")  # ansi
+environment = gym.make("FrozenLake-v1", is_slippery=False, render_mode="ansi",
+                       max_episode_steps=100)  # ansi
 environment.reset()
 # environment.render()
 
@@ -39,16 +40,18 @@ for _ in range(episodes):
         # 'environment.action_space.sample()'.
         action = 0 # TODO: remove me.
 
+        # ask for environment feedback.
         new_state, reward, game_over, info, _ = environment.step(action)
 
-        q_table[state, action] = q_table[state, action] + alpha * (
-            reward + gamma * np.max(q_table[new_state]) - q_table[state, action]
-        )
+        # update the Q-Table
+        # TODO compute the Q-Table update.
 
         state = new_state
 
         if reward:
             outcome = "win"
+        if environment._elapsed_steps > 1000:
+            game_over = True
 
     outcomes.append(outcome)
 
