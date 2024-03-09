@@ -1,4 +1,4 @@
-"""Train a q-table agent using your TicTacToe board."""
+"""Train a q-table agent using a TicTacToe board."""
 
 import pickle
 from collections import Counter
@@ -33,7 +33,7 @@ def process_result(err: Exception) -> Tuple[float, float, str]:
     """Process the game over exception.
 
     Args:
-        err (Exception): An excpetion potentially from four TicTacToeBoard.
+        err (Exception): An excpetion potentially from your TicTacToeBoard.
 
     Raises:
         err: Exception from sources other than the board.
@@ -46,11 +46,15 @@ def process_result(err: Exception) -> Tuple[float, float, str]:
     reward2 = 0.0
     event = ""
     if isinstance(err, ValueError):
+        # TODO: change the following line according to your
+        # error message to extract the incorrect player.
         incorrect_player = int(str(err)[7])
         # TODO: set reward1, reward2 and event
         # for the cheating case.
 
     elif isinstance(err, PlayerWins):
+        # TODO: change the following line according to your
+        # error message to extract the winning player.
         winning_player = int(str(err)[7])
         if winning_player == 1:
             # TODO: set reward1, reward2 and event
@@ -85,7 +89,7 @@ def board_update(
             A tuple of the board, as well as the rewards for
             both player as well as an event description of
             something happend.
-            Se the description to None if the board registerd
+            Set the description to None if the board registerd
             the move without an event.
     """
     reward1, reward2, event = 0.0, 0.0, None
@@ -115,11 +119,22 @@ if __name__ == "__main__":
         state = board.get_board().flatten()
         for i in range(9):
             current_player = i % 2 + 1
-            seed = jax.random.split(seed, 1).squeeze()  # create a new random seed.
+            seed = jax.random.split(seed, 1).squeeze()  # Create a new random seed.
 
-            # TODO: Implement Q-learning for the TicTacToe game.
+            # TODO: Implement Q-learning for the TicTacToe game:
+
+            # TODO: Set the next move either using the best existing action
+            # for the current state or randomly using create_explore_move
+
+            # TODO: Register a new move using board_update().
             event = ""
             reward = 0
+
+            # TODO: Get the new state and save it to the q-table.
+
+            # TODO: Update the table using the q-table-update rule.
+
+            # TODO: Set the new state for the next iteration.
 
             if event:
                 rewards.append(reward)

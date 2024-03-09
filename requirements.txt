@@ -5,3 +5,5 @@ jax
 jaxlib
 flax
 tqdm
+gymnasium
+pygame

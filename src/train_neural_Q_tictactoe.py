@@ -42,7 +42,7 @@ class Agent(nn.Module):
         out = nn.Dense(9, use_bias=True)(hidden)
         out = nn.sigmoid(out)
         out = out - jnp.abs(board)
-        return jnp.reshape(out, (3, 3))  # the probabilities for each move.
+        return jnp.reshape(out, (3, 3))  # The probabilities for each move.
 
 
 @jax.jit
@@ -55,7 +55,7 @@ def get_move(move_probs: jnp.ndarray) -> Tuple[jnp.ndarray, ...]:
     Returns:
         Tuple[jnp.ndarray, ...]: Move coordinates in 2D. I.e. [0 1].
     """
-    # TODO: use jnp.argmax and jnp.unravel_index to find the most
+    # TODO: Use jnp.argmax and jnp.unravel_index to find the most
     # probable move.
     move_2d = (0, 0)  # fix this line
     return move_2d
@@ -72,9 +72,9 @@ def set_up_gt(move: Tuple[jnp.ndarray, jnp.ndarray], desired: float) -> jnp.ndar
     Returns:
         jnp.ndarray: A ground truth array of shape (3, 3).
     """
-    # Use the `at` and `set` functions from jnp.ndarrays to
+    # TODO: Use the `at` and `set` functions from jnp.ndarrays to
     # set the ground truth we need for the cost function.
-    gt = jnp.zeros((3, 3))  # add to this line.
+    gt = jnp.zeros((3, 3))  # Add to this line.
     return gt
 
 
@@ -93,7 +93,7 @@ def cost(
         jnp.ndarray: The agent's reward prediction error.
     """
     y = set_up_gt(move, y)
-    # TODO: compute a q-learning squared cost function.
+    # TODO: Compute a q-learning squared cost function.
     return jnp.mean((0 - 0) ** 2)  # fix this line.
 
 
@@ -133,10 +133,14 @@ if __name__ == "__main__":
             seed = jax.random.split(seed, 1).squeeze()
 
             # TODO: Have your agent play against a random oponent.
-            # use reward values to backprop into an agent.
+            # Use reward values to backprop into an agent. Recycle your
+            # code from the previous exercise.
 
-            reward = 0  # remove this line.
-            event = ""  # remove this line.
+            reward = 0  # Remove this line.
+            event = ""  # Remove this line.
+
+            # TODO: Compute gradients using `jax.grad` and update your
+            # weights using jax.tree_map(lambda w, g: w - alpha * g, weights, grads).
 
             if event:
                 rewards.append(reward)
