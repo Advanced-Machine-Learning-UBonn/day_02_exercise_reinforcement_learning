@@ -24,17 +24,17 @@ If you see your figure reach the goal in the short movie clip you are done.
 2.1 Let's consider a more challenging example next. Navigate to `src/train_table_Q_tictactoe.py` and finish the `TicTacToeBoard` class in `gen.py`. Use `nox -s test` to check your
 progress. When `tests/test_board.py` checks out without an error, this task is done.
 
-2.2 Set up a Q-Table-based agent and train it. To do so open `src/train_table_Q_tictactoe.py` and use a Python dictionary as your data structure for Q-Table. The dictionary will allow you to encode the board states as strings.
+2.2 Set up a Q-Table-based agent and train it. To do so open `src/train_table_Q_tictactoe.py` and start with the main routine. Use a Python dictionary as your data structure for the Q-Table. The dictionary will allow you to encode the board states as strings and access them eaisly with `q_table[str(state)]`. Use `create_explore_move` when sampling random moves from the set of allowed moves.
 
 2.3 Implement the `create_explore_move` and `process_result` functions. Use `tests/test_explore_move.py` to test your code. 
 
-2.4 Recycle your code from the frozen lake example to implement Q-Table (or dict) learning. Implement learning by playing games against a random opponent. The opponent performs random moves all the time. Use your `create explore move` function for the opponent. 
+2.4 Recycle your code from the frozen lake example to implement Q-Table (or dict) learning. Implement learning by playing games against a random opponent. The opponent performs random moves all the time. Use your `create_explore_move` function for the opponent. 
 
 2.5 Stop sampling from the Q-table every time for your agent. Sample the agent with probability $\epsilon$ and
-perform an exploratory move with probability $1 - \epsilon$. Rember to use `jax.random.split` to generate new seeds for `jax.random.uniform`. 
+perform an exploratory move with probability $1 - \epsilon$. Remember to use `jax.random.split` to generate new seeds for `jax.random.uniform`. 
 
 ## Task 3: Q-Neural RL:
-3.1 Let's replace the Table with a neural network [2, Algorithm 1]. For simplicity, we do not implement batching, this works here, but won't scale to harder problems. Re-use as much code from task two as possible. Open  `src/train_neural_Q_tictactoe.py`. Your `board_update`, `create_explore_move` functions are already imported.
+3.1 Let's replace the Q-table with a neural network [2, Algorithm 1]. For simplicity, we do not implement batching, this works here, but won't scale to harder problems. Re-use as much code from task two as possible. Open  `src/train_neural_Q_tictactoe.py`. Your `board_update`, `create_explore_move` functions are already imported.
 Recall the cost function for neural Q-Learning:
 
 $$
@@ -56,7 +56,7 @@ $$
 \end{align}
 $$
 
-into $\mathbf{y}$ the the position of the move taken. Compute gradients using `jax.grad` and update your weights using `jax.tree_map(lambda w, g: w - alpha*g, weights, grads)`.
+into $\mathbf{y}$ the position of the move taken. Compute gradients using `jax.grad` and update your weights using `jax.tree_map(lambda w, g: w - alpha*g, weights, grads)`.
 
 ### Play against your agent
 `play.py` allows playing against the trained TicTacToe agents.

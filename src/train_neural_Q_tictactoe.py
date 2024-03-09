@@ -72,7 +72,7 @@ def set_up_gt(move: Tuple[jnp.ndarray, jnp.ndarray], desired: float) -> jnp.ndar
     Returns:
         jnp.ndarray: A ground truth array of shape (3, 3).
     """
-    # Use the `at` and `set` functions from jnp.ndarrays to
+    # TODO: Use the `at` and `set` functions from jnp.ndarrays to
     # set the ground truth we need for the cost function.
     gt = jnp.zeros((3, 3))  # add to this line.
     return gt
