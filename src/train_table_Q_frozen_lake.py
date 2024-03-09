@@ -35,17 +35,18 @@ for _ in range(episodes):
 
     while not game_over:
 
-        # if a q_table entry exists for state choose the
-        # most likely action.
-        # if no entry exists choose a random action from
-        # 'environment.action_space.sample()'.
+        # TODO: if a q_table entry exists for state and the reward
+        #       is not the same for all actions choose the most
+        #       likely action.
+        #       If no entry exists choose a random action from
+        #       'environment.action_space.sample()'.
         action = 0  # TODO: remove me.
 
         # ask for environment feedback.
         new_state, reward, game_over, info, _ = environment.step(action)
 
         # update the Q-Table
-        # TODO compute the Q-Table update.
+        # TODO: compute the Q-Table update.
 
         state = new_state
 
