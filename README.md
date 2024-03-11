@@ -1,7 +1,6 @@
 # Exercise Reinforcement Learning
 This exercise explores Q-learning based on neural and table-based approaches. 
-## Task 1 & 2: Q-Table based RL:
-### Frozen-Lake
+## Task 1: Q-Table based RL - Frozen-Lake
 
 1. Take a look at the [frozen-lake-documentation](https://gymnasium.farama.org/environments/toy_text/frozen_lake/), and familiarize yourself with the setup. Recall the Q-Table update Rule we saw during the lecture or take a look at [1, page 153]:
 
@@ -31,7 +30,7 @@ cd /home/$USER/miniconda3/envs/aml/lib
 ```
 Source: [Stackoverflow](https://stackoverflow.com/questions/72110384/libgl-error-mesa-loader-failed-to-open-iris)
 
-### Tic-Tac-Toe
+## Task 2: Q-Table based RL - Tic-Tac-Toe
 1. Let's consider a more challenging example next. Navigate to `src/train_table_Q_tictactoe.py` and finish the `TicTacToeBoard` class in `gen.py`. Use `nox -s test` to check your
 progress. When `tests/test_board.py` checks out without an error, this task is done.
 
@@ -44,7 +43,7 @@ progress. When `tests/test_board.py` checks out without an error, this task is d
 5. Stop sampling from the Q-table every time for your agent. Sample the agent with probability $\epsilon$ and
 perform an exploratory move with probability $1 - \epsilon$. Remember to use `jax.random.split` to generate new seeds for `jax.random.uniform`. 
 
-## Task 3: Q-Neural RL:
+## Task 3: Q-Neural RL - Tic-Tac-Toe
 1. Let's replace the Q-table with a neural network [2, Algorithm 1]. For simplicity, we do not implement batching, this works here, but won't scale to harder problems. Re-use as much code from task two as possible. Open  `src/train_neural_Q_tictactoe.py`. Your `board_update`, `create_explore_move` functions are already imported.
 Recall the cost function for neural Q-Learning:
 
