@@ -2,7 +2,7 @@
 This exercise explores Q-learning based on neural and table-based approaches. 
 ## Task 1: Q-Table based RL - Frozen-Lake
 
-1. Take a look at the [frozen-lake-documentation](https://gymnasium.farama.org/environments/toy_text/frozen_lake/), and familiarize yourself with the setup. Recall the Q-Table update Rule we saw during the lecture or take a look at [1, page 153]:
+1. Take a look at the [frozen-lake-documentation](https://gymnasium.farama.org/environments/toy_text/frozen_lake/), and familiarize yourself with the setup. Recall the Q-Table update Rule we saw during the lecture or take a look at [1, equation (6.8) on page 153]:
 
 ```math
     \begin{align}
